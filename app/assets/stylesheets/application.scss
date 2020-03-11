@@ -14,3 +14,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+.card-img-top {
+  height: 200px;
+  background-position: center;
+}
+
+.img-fill {
+  width: 100%;
+}
+
+.fa-airbnb {
+  margin-right: 8px;
+}
+
+.card {
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}

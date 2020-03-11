@@ -9,16 +9,17 @@ require 'faker'
 puts "dropping all database"
 Flat.destroy_all
 
-puts "generating 5 flats"
+puts "generating 10 flats"
 
-5.times do
+10.times do
+  image_url = "https://source.unsplash.com/1600x900/?bedroom#{rand(1..100)}"
   Flat.create!(
     name: Faker::Address.street_name,
     address: Faker::Address.full_address,
     description: Faker::Restaurant.review,
     price_per_night: rand(50..150),
     number_of_guests: rand(5..10),
-    image_url: "https://source.unsplash.com/random"
+    image_url: image_url
   )
 end
 

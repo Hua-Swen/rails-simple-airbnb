@@ -1,47 +1,19 @@
-<%= form_with(model: flat, local: true) do |form| %>
-  <% if flat.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(flat.errors.count, "error") %> prohibited this flat from being saved:</h2>
+<%= simple_form_for(flat) do |form| %>
+  <% form.error_notification %>
 
-      <ul>
-      <% flat.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= form.input :name%>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+    <%= form.input :address%>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <%= form.input :description%>
 
-  <div class="field">
-    <%= form.label :price_per_night %>
-    <%= form.number_field :price_per_night %>
-  </div>
+    <%= form.input :price_per_night%>
 
-  <div class="field">
-    <%= form.label :number_of_guests %>
-    <%= form.number_field :number_of_guests %>
-  </div>
+    <%= form.input :number_of_guests%>
 
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
-  </div>
+    <%= form.input :image_url%>
 
-  <div class="actions">
     <%= form.submit %>
-  </div>
+
 <% end %>
